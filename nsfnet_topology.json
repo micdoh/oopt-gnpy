@@ -1,0 +1,232 @@
+{
+  "network-name": "NSFNET",
+  "elements": [
+    {"uid": "trx WA", "type": "Transceiver", "metadata": {"location": {"city": "Seattle", "region": "WA", "latitude": 47.6, "longitude": -122.3}}},
+    {"uid": "trx CA1", "type": "Transceiver", "metadata": {"location": {"city": "Palo Alto", "region": "CA", "latitude": 37.4, "longitude": -122.1}}},
+    {"uid": "trx CA2", "type": "Transceiver", "metadata": {"location": {"city": "San Diego", "region": "CA", "latitude": 32.7, "longitude": -117.2}}},
+    {"uid": "trx UT", "type": "Transceiver", "metadata": {"location": {"city": "Salt Lake City", "region": "UT", "latitude": 40.8, "longitude": -111.9}}},
+    {"uid": "trx CO", "type": "Transceiver", "metadata": {"location": {"city": "Boulder", "region": "CO", "latitude": 40.0, "longitude": -105.3}}},
+    {"uid": "trx NE", "type": "Transceiver", "metadata": {"location": {"city": "Lincoln", "region": "NE", "latitude": 40.8, "longitude": -96.7}}},
+    {"uid": "trx TX", "type": "Transceiver", "metadata": {"location": {"city": "College Station", "region": "TX", "latitude": 30.6, "longitude": -96.3}}},
+    {"uid": "trx IL", "type": "Transceiver", "metadata": {"location": {"city": "Champaign", "region": "IL", "latitude": 40.1, "longitude": -88.2}}},
+    {"uid": "trx PA", "type": "Transceiver", "metadata": {"location": {"city": "Pittsburgh", "region": "PA", "latitude": 40.4, "longitude": -80.0}}},
+    {"uid": "trx GA", "type": "Transceiver", "metadata": {"location": {"city": "Atlanta", "region": "GA", "latitude": 33.7, "longitude": -84.4}}},
+    {"uid": "trx MI", "type": "Transceiver", "metadata": {"location": {"city": "Ann Arbor", "region": "MI", "latitude": 42.3, "longitude": -83.7}}},
+    {"uid": "trx NY", "type": "Transceiver", "metadata": {"location": {"city": "Ithaca", "region": "NY", "latitude": 42.4, "longitude": -76.5}}},
+    {"uid": "trx NJ", "type": "Transceiver", "metadata": {"location": {"city": "Princeton", "region": "NJ", "latitude": 40.4, "longitude": -74.7}}},
+    {"uid": "trx DC", "type": "Transceiver", "metadata": {"location": {"city": "College Park", "region": "MD", "latitude": 39.0, "longitude": -76.9}}},
+
+    {"uid": "roadm WA", "type": "Roadm", "metadata": {"location": {"city": "Seattle", "region": "WA", "latitude": 47.6, "longitude": -122.3}}},
+    {"uid": "roadm CA1", "type": "Roadm", "metadata": {"location": {"city": "Palo Alto", "region": "CA", "latitude": 37.4, "longitude": -122.1}}},
+    {"uid": "roadm CA2", "type": "Roadm", "metadata": {"location": {"city": "San Diego", "region": "CA", "latitude": 32.7, "longitude": -117.2}}},
+    {"uid": "roadm UT", "type": "Roadm", "metadata": {"location": {"city": "Salt Lake City", "region": "UT", "latitude": 40.8, "longitude": -111.9}}},
+    {"uid": "roadm CO", "type": "Roadm", "metadata": {"location": {"city": "Boulder", "region": "CO", "latitude": 40.0, "longitude": -105.3}}},
+    {"uid": "roadm NE", "type": "Roadm", "metadata": {"location": {"city": "Lincoln", "region": "NE", "latitude": 40.8, "longitude": -96.7}}},
+    {"uid": "roadm TX", "type": "Roadm", "metadata": {"location": {"city": "College Station", "region": "TX", "latitude": 30.6, "longitude": -96.3}}},
+    {"uid": "roadm IL", "type": "Roadm", "metadata": {"location": {"city": "Champaign", "region": "IL", "latitude": 40.1, "longitude": -88.2}}},
+    {"uid": "roadm PA", "type": "Roadm", "metadata": {"location": {"city": "Pittsburgh", "region": "PA", "latitude": 40.4, "longitude": -80.0}}},
+    {"uid": "roadm GA", "type": "Roadm", "metadata": {"location": {"city": "Atlanta", "region": "GA", "latitude": 33.7, "longitude": -84.4}}},
+    {"uid": "roadm MI", "type": "Roadm", "metadata": {"location": {"city": "Ann Arbor", "region": "MI", "latitude": 42.3, "longitude": -83.7}}},
+    {"uid": "roadm NY", "type": "Roadm", "metadata": {"location": {"city": "Ithaca", "region": "NY", "latitude": 42.4, "longitude": -76.5}}},
+    {"uid": "roadm NJ", "type": "Roadm", "metadata": {"location": {"city": "Princeton", "region": "NJ", "latitude": 40.4, "longitude": -74.7}}},
+    {"uid": "roadm DC", "type": "Roadm", "metadata": {"location": {"city": "College Park", "region": "MD", "latitude": 39.0, "longitude": -76.9}}},
+
+    {"uid": "fiber (WA \u2192 CA1)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 1100.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+    {"uid": "fiber (CA1 \u2192 WA)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 1100.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+
+    {"uid": "fiber (WA \u2192 UT)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 1200.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+    {"uid": "fiber (UT \u2192 WA)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 1200.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+
+    {"uid": "fiber (WA \u2192 MI)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 3200.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+    {"uid": "fiber (MI \u2192 WA)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 3200.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+
+    {"uid": "fiber (CA1 \u2192 CA2)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 600.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+    {"uid": "fiber (CA2 \u2192 CA1)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 600.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+
+    {"uid": "fiber (CA1 \u2192 UT)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 1000.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+    {"uid": "fiber (UT \u2192 CA1)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 1000.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+
+    {"uid": "fiber (CA2 \u2192 TX)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 2000.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+    {"uid": "fiber (TX \u2192 CA2)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 2000.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+
+    {"uid": "fiber (UT \u2192 CO)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 800.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+    {"uid": "fiber (CO \u2192 UT)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 800.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+
+    {"uid": "fiber (CO \u2192 NE)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 900.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+    {"uid": "fiber (NE \u2192 CO)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 900.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+
+    {"uid": "fiber (CO \u2192 GA)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 2400.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+    {"uid": "fiber (GA \u2192 CO)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 2400.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+
+    {"uid": "fiber (NE \u2192 TX)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 1500.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+    {"uid": "fiber (TX \u2192 NE)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 1500.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+
+    {"uid": "fiber (NE \u2192 IL)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 800.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+    {"uid": "fiber (IL \u2192 NE)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 800.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+
+    {"uid": "fiber (TX \u2192 GA)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 1200.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+    {"uid": "fiber (GA \u2192 TX)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 1200.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+
+    {"uid": "fiber (IL \u2192 PA)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 700.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+    {"uid": "fiber (PA \u2192 IL)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 700.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+
+    {"uid": "fiber (IL \u2192 MI)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 400.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+    {"uid": "fiber (MI \u2192 IL)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 400.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+
+    {"uid": "fiber (PA \u2192 NY)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 500.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+    {"uid": "fiber (NY \u2192 PA)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 500.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+
+    {"uid": "fiber (PA \u2192 DC)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 350.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+    {"uid": "fiber (DC \u2192 PA)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 350.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+
+    {"uid": "fiber (GA \u2192 DC)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 900.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+    {"uid": "fiber (DC \u2192 GA)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 900.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+
+    {"uid": "fiber (MI \u2192 NY)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 800.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+    {"uid": "fiber (NY \u2192 MI)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 800.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+
+    {"uid": "fiber (MI \u2192 NJ)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 900.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+    {"uid": "fiber (NJ \u2192 MI)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 900.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+
+    {"uid": "fiber (NY \u2192 NJ)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 300.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+    {"uid": "fiber (NJ \u2192 NY)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 300.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+
+    {"uid": "fiber (NJ \u2192 DC)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 200.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}},
+    {"uid": "fiber (DC \u2192 NJ)", "type": "Fiber", "type_variety": "SSMF", "params": {"length": 200.0, "length_units": "km", "loss_coef": 0.2, "con_in": null, "con_out": null}}
+  ],
+  "connections": [
+    {"from_node": "trx WA", "to_node": "roadm WA"},
+    {"from_node": "roadm WA", "to_node": "trx WA"},
+    {"from_node": "trx CA1", "to_node": "roadm CA1"},
+    {"from_node": "roadm CA1", "to_node": "trx CA1"},
+    {"from_node": "trx CA2", "to_node": "roadm CA2"},
+    {"from_node": "roadm CA2", "to_node": "trx CA2"},
+    {"from_node": "trx UT", "to_node": "roadm UT"},
+    {"from_node": "roadm UT", "to_node": "trx UT"},
+    {"from_node": "trx CO", "to_node": "roadm CO"},
+    {"from_node": "roadm CO", "to_node": "trx CO"},
+    {"from_node": "trx NE", "to_node": "roadm NE"},
+    {"from_node": "roadm NE", "to_node": "trx NE"},
+    {"from_node": "trx TX", "to_node": "roadm TX"},
+    {"from_node": "roadm TX", "to_node": "trx TX"},
+    {"from_node": "trx IL", "to_node": "roadm IL"},
+    {"from_node": "roadm IL", "to_node": "trx IL"},
+    {"from_node": "trx PA", "to_node": "roadm PA"},
+    {"from_node": "roadm PA", "to_node": "trx PA"},
+    {"from_node": "trx GA", "to_node": "roadm GA"},
+    {"from_node": "roadm GA", "to_node": "trx GA"},
+    {"from_node": "trx MI", "to_node": "roadm MI"},
+    {"from_node": "roadm MI", "to_node": "trx MI"},
+    {"from_node": "trx NY", "to_node": "roadm NY"},
+    {"from_node": "roadm NY", "to_node": "trx NY"},
+    {"from_node": "trx NJ", "to_node": "roadm NJ"},
+    {"from_node": "roadm NJ", "to_node": "trx NJ"},
+    {"from_node": "trx DC", "to_node": "roadm DC"},
+    {"from_node": "roadm DC", "to_node": "trx DC"},
+
+    {"from_node": "roadm WA", "to_node": "fiber (WA \u2192 CA1)"},
+    {"from_node": "fiber (WA \u2192 CA1)", "to_node": "roadm CA1"},
+    {"from_node": "roadm CA1", "to_node": "fiber (CA1 \u2192 WA)"},
+    {"from_node": "fiber (CA1 \u2192 WA)", "to_node": "roadm WA"},
+
+    {"from_node": "roadm WA", "to_node": "fiber (WA \u2192 UT)"},
+    {"from_node": "fiber (WA \u2192 UT)", "to_node": "roadm UT"},
+    {"from_node": "roadm UT", "to_node": "fiber (UT \u2192 WA)"},
+    {"from_node": "fiber (UT \u2192 WA)", "to_node": "roadm WA"},
+
+    {"from_node": "roadm WA", "to_node": "fiber (WA \u2192 MI)"},
+    {"from_node": "fiber (WA \u2192 MI)", "to_node": "roadm MI"},
+    {"from_node": "roadm MI", "to_node": "fiber (MI \u2192 WA)"},
+    {"from_node": "fiber (MI \u2192 WA)", "to_node": "roadm WA"},
+
+    {"from_node": "roadm CA1", "to_node": "fiber (CA1 \u2192 CA2)"},
+    {"from_node": "fiber (CA1 \u2192 CA2)", "to_node": "roadm CA2"},
+    {"from_node": "roadm CA2", "to_node": "fiber (CA2 \u2192 CA1)"},
+    {"from_node": "fiber (CA2 \u2192 CA1)", "to_node": "roadm CA1"},
+
+    {"from_node": "roadm CA1", "to_node": "fiber (CA1 \u2192 UT)"},
+    {"from_node": "fiber (CA1 \u2192 UT)", "to_node": "roadm UT"},
+    {"from_node": "roadm UT", "to_node": "fiber (UT \u2192 CA1)"},
+    {"from_node": "fiber (UT \u2192 CA1)", "to_node": "roadm CA1"},
+
+    {"from_node": "roadm CA2", "to_node": "fiber (CA2 \u2192 TX)"},
+    {"from_node": "fiber (CA2 \u2192 TX)", "to_node": "roadm TX"},
+    {"from_node": "roadm TX", "to_node": "fiber (TX \u2192 CA2)"},
+    {"from_node": "fiber (TX \u2192 CA2)", "to_node": "roadm CA2"},
+
+    {"from_node": "roadm UT", "to_node": "fiber (UT \u2192 CO)"},
+    {"from_node": "fiber (UT \u2192 CO)", "to_node": "roadm CO"},
+    {"from_node": "roadm CO", "to_node": "fiber (CO \u2192 UT)"},
+    {"from_node": "fiber (CO \u2192 UT)", "to_node": "roadm UT"},
+
+    {"from_node": "roadm CO", "to_node": "fiber (CO \u2192 NE)"},
+    {"from_node": "fiber (CO \u2192 NE)", "to_node": "roadm NE"},
+    {"from_node": "roadm NE", "to_node": "fiber (NE \u2192 CO)"},
+    {"from_node": "fiber (NE \u2192 CO)", "to_node": "roadm CO"},
+
+    {"from_node": "roadm CO", "to_node": "fiber (CO \u2192 GA)"},
+    {"from_node": "fiber (CO \u2192 GA)", "to_node": "roadm GA"},
+    {"from_node": "roadm GA", "to_node": "fiber (GA \u2192 CO)"},
+    {"from_node": "fiber (GA \u2192 CO)", "to_node": "roadm CO"},
+
+    {"from_node": "roadm NE", "to_node": "fiber (NE \u2192 TX)"},
+    {"from_node": "fiber (NE \u2192 TX)", "to_node": "roadm TX"},
+    {"from_node": "roadm TX", "to_node": "fiber (TX \u2192 NE)"},
+    {"from_node": "fiber (TX \u2192 NE)", "to_node": "roadm NE"},
+
+    {"from_node": "roadm NE", "to_node": "fiber (NE \u2192 IL)"},
+    {"from_node": "fiber (NE \u2192 IL)", "to_node": "roadm IL"},
+    {"from_node": "roadm IL", "to_node": "fiber (IL \u2192 NE)"},
+    {"from_node": "fiber (IL \u2192 NE)", "to_node": "roadm NE"},
+
+    {"from_node": "roadm TX", "to_node": "fiber (TX \u2192 GA)"},
+    {"from_node": "fiber (TX \u2192 GA)", "to_node": "roadm GA"},
+    {"from_node": "roadm GA", "to_node": "fiber (GA \u2192 TX)"},
+    {"from_node": "fiber (GA \u2192 TX)", "to_node": "roadm TX"},
+
+    {"from_node": "roadm IL", "to_node": "fiber (IL \u2192 PA)"},
+    {"from_node": "fiber (IL \u2192 PA)", "to_node": "roadm PA"},
+    {"from_node": "roadm PA", "to_node": "fiber (PA \u2192 IL)"},
+    {"from_node": "fiber (PA \u2192 IL)", "to_node": "roadm IL"},
+
+    {"from_node": "roadm IL", "to_node": "fiber (IL \u2192 MI)"},
+    {"from_node": "fiber (IL \u2192 MI)", "to_node": "roadm MI"},
+    {"from_node": "roadm MI", "to_node": "fiber (MI \u2192 IL)"},
+    {"from_node": "fiber (MI \u2192 IL)", "to_node": "roadm IL"},
+
+    {"from_node": "roadm PA", "to_node": "fiber (PA \u2192 NY)"},
+    {"from_node": "fiber (PA \u2192 NY)", "to_node": "roadm NY"},
+    {"from_node": "roadm NY", "to_node": "fiber (NY \u2192 PA)"},
+    {"from_node": "fiber (NY \u2192 PA)", "to_node": "roadm PA"},
+
+    {"from_node": "roadm PA", "to_node": "fiber (PA \u2192 DC)"},
+    {"from_node": "fiber (PA \u2192 DC)", "to_node": "roadm DC"},
+    {"from_node": "roadm DC", "to_node": "fiber (DC \u2192 PA)"},
+    {"from_node": "fiber (DC \u2192 PA)", "to_node": "roadm PA"},
+
+    {"from_node": "roadm GA", "to_node": "fiber (GA \u2192 DC)"},
+    {"from_node": "fiber (GA \u2192 DC)", "to_node": "roadm DC"},
+    {"from_node": "roadm DC", "to_node": "fiber (DC \u2192 GA)"},
+    {"from_node": "fiber (DC \u2192 GA)", "to_node": "roadm GA"},
+
+    {"from_node": "roadm MI", "to_node": "fiber (MI \u2192 NY)"},
+    {"from_node": "fiber (MI \u2192 NY)", "to_node": "roadm NY"},
+    {"from_node": "roadm NY", "to_node": "fiber (NY \u2192 MI)"},
+    {"from_node": "fiber (NY \u2192 MI)", "to_node": "roadm MI"},
+
+    {"from_node": "roadm MI", "to_node": "fiber (MI \u2192 NJ)"},
+    {"from_node": "fiber (MI \u2192 NJ)", "to_node": "roadm NJ"},
+    {"from_node": "roadm NJ", "to_node": "fiber (NJ \u2192 MI)"},
+    {"from_node": "fiber (NJ \u2192 MI)", "to_node": "roadm MI"},
+
+    {"from_node": "roadm NY", "to_node": "fiber (NY \u2192 NJ)"},
+    {"from_node": "fiber (NY \u2192 NJ)", "to_node": "roadm NJ"},
+    {"from_node": "roadm NJ", "to_node": "fiber (NJ \u2192 NY)"},
+    {"from_node": "fiber (NJ \u2192 NY)", "to_node": "roadm NY"},
+
+    {"from_node": "roadm NJ", "to_node": "fiber (NJ \u2192 DC)"},
+    {"from_node": "fiber (NJ \u2192 DC)", "to_node": "roadm DC"},
+    {"from_node": "roadm DC", "to_node": "fiber (DC \u2192 NJ)"},
+    {"from_node": "fiber (DC \u2192 NJ)", "to_node": "roadm NJ"}
+  ]
+}

@@ -1,5 +1,66 @@
 # GNPy: Optical Route Planning and DWDM Network Optimization
 
+## NSFNET Benchmark Experiment
+
+This fork includes an NSFNET benchmark that simulates 100 optical path requests on the classic 14-node NSFNET topology and reports per-request timing.
+
+**Topology:** 14 nodes, 21 bidirectional links (42 fibers), 96 C-band channels @ 50 GHz spacing.
+
+### Setup
+
+```bash
+# 1. Clone this fork
+git clone https://github.com/micdoh/oopt-gnpy.git
+cd oopt-gnpy
+
+# 2. Create a virtual environment
+python3 -m venv .venv
+source .venv/bin/activate
+
+# 3. Try installing the full package (requires cmake, ninja, and libyang C library)
+pip install -e .
+
+# If oopt_gnpy_libyang fails to build (common on macOS), install the core
+# dependencies manually instead — the benchmark does not need YANG support:
+pip install "numpy>=1.24.4,<2" "scipy<2" networkx pandas tabulate openpyxl xlrd
+
+# Then create a minimal mock for the libyang binding:
+mkdir -p .venv/lib/python3.*/site-packages/oopt_gnpy_libyang
+cat > .venv/lib/python3.*/site-packages/oopt_gnpy_libyang/__init__.py << 'EOF'
+class _MockClass:
+    def __init__(self, *a, **kw): pass
+    def __getattr__(self, n): return _MockClass()
+    def __call__(self, *a, **kw): return _MockClass()
+    def __or__(self, o): return self
+    def __ror__(self, o): return self
+    def __iter__(self): return iter([])
+    def __bool__(self): return False
+    def __str__(self): return ""
+SNode = Context = DataNode = _MockClass
+ContextOptions = DataFormat = LogOptions = ParseOptions = PrintFlags = ValidationOptions = _MockClass()
+Error = Exception
+def set_log_options(*a, **kw): pass
+def yang_search_path(): return ""
+EOF
+```
+
+### Run the benchmark
+
+```bash
+# Make sure the venv is active and PYTHONPATH includes the repo root
+source .venv/bin/activate
+PYTHONPATH=. python3 nsfnet_benchmark.py
+```
+
+The script will:
+1. Load the NSFNET topology (`nsfnet_topology.json`) and equipment library
+2. Auto-design the network (insert amplifiers, split long fibers)
+3. Generate 100 random 100 Gbps demands between node pairs
+4. Process each request individually (path computation, signal propagation, spectrum assignment) and time it
+5. Print per-request results and a timing summary
+
+---
+
 [![Install via pip](https://img.shields.io/pypi/v/gnpy)](https://pypi.org/project/gnpy/)
 [![Python versions](https://img.shields.io/pypi/pyversions/gnpy)](https://pypi.org/project/gnpy/)
 [![Documentation status](https://readthedocs.org/projects/gnpy/badge/?version=master)](http://gnpy.readthedocs.io/en/master/?badge=master)
