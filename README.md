@@ -59,6 +59,52 @@ The script will:
 4. Process each request individually (path computation, signal propagation, spectrum assignment) and time it
 5. Print per-request results and a timing summary
 
+### Physical layer model
+
+GNPy's propagation engine tracks signal power, ASE noise, and nonlinear interference (NLI) independently per channel across every network element. The key modelling capabilities are summarised below.
+
+**Nonlinear interference (NLI)**
+
+| Model | Reference | Notes |
+|---|---|---|
+| GN model (analytical) | Poggiolini et al., [arXiv:1209.0394](https://arxiv.org/abs/1209.0394), Eq. 120 | Closed-form; SPM weight 16/27, XPM weight 2×16/27 |
+| GGN model (spectrally separated) | [arXiv:1710.02225](https://arxiv.org/abs/1710.02225), Eq. 21 | More accurate spectral separation of interferers; higher cost |
+| GGN approximation | D'Amico et al., [JLT 2022](https://doi.org/10.1364/JLT.451482), Eq. 24-25 | Faster approximation suitable for C+L+S bands |
+
+All three variants compute per-channel NLI power from fibre parameters (gamma, beta2, beta3, effective area) and the full loaded spectrum.
+
+**ISRS (Inter-channel Stimulated Raman Scattering)**
+
+The Raman solver (`RamanSolver` in `gnpy/core/science_utils.py`) computes frequency-dependent power transfer between channels via the Raman gain coefficient matrix. It solves the coupled first-order ODEs along the fibre either perturbatively (Taylor expansion, orders 1-4) or numerically. The resulting per-channel power/loss profiles feed into the NLI and noise calculations. However, ISRS is not yet fully integrated into the GN/GGN model itself for wideband (multi-band) scenarios — the Raman power tilt and the NLI are currently computed in separate steps.
+
+**Distributed Raman amplification**
+
+Fully supported via the `RamanFiber` element. Pump configuration includes:
+- Co-propagating and counter-propagating pumps (arbitrary number, frequency, and power)
+- Iterative bidirectional solver for co+counter pump interactions
+- Spontaneous Raman scattering ASE (thermal noise) from each pump
+- Configurable spatial resolution for solver and output
+
+Raman amplification requires a simulation parameters file (`--sim-params`) to be passed at runtime.
+
+**Nyquist subchannels / superchannels**
+
+Not supported. The spectrum representation (`SpectralInformation` in `gnpy/core/info.py`) operates at per-channel granularity — each carrier has a single baud rate, slot width, and roll-off. There is no native subchannel or subcarrier decomposition within a channel. YANG data models reference "subcarrier" definitions but these are protocol-level only and not used in propagation. As a workaround, subchannels could be modelled as separate narrow-bandwidth carriers, but this is not equivalent to a proper Nyquist-WDM subchannel model.
+
+**Other physical layer features**
+
+| Feature | Details |
+|---|---|
+| ASE noise (EDFA) | Noise figure model (polynomial, dual-stage, or OpenROADM); frequency-dependent gain ripple and dynamic gain tilt |
+| ASE noise (Raman) | Spontaneous Raman emission including thermal photon factors |
+| Chromatic dispersion | Frequency-dependent via beta2/beta3 or dispersion + slope; cumulative across path |
+| PMD | Per-span DGD (`pmd_coef × sqrt(length)`); cumulative RSS across path |
+| PDL | Tracked per channel through ROADMs (add/drop/express paths) |
+| Fibre nonlinearity | Frequency-dependent gamma from n2 and effective area |
+| ROADM impairments | Insertion loss, OSNR penalty, PMD, PDL, power equalisation (per-channel, PSD, or per-slot-width modes) |
+| Connector / splice losses | Separate in/out connector loss per fibre span; lumped losses at arbitrary positions |
+| Spectrum assignment | First-fit policy on ITU flex-grid (6.25 GHz granularity, configurable guard band) |
+
 ---
 
 [![Install via pip](https://img.shields.io/pypi/v/gnpy)](https://pypi.org/project/gnpy/)
